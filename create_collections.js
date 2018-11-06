@@ -1,0 +1,10 @@
+mongo = new Mongo("localhost");
+newDB = mongo.getDB("newDB");
+collections = newDB.getCollectionNames();
+print("intial collections:");
+printjson(collections);
+newDB.createCollection("newCollectionA");
+newDB.createCollection("newCollectionB");
+print("After collection created");
+collections = newDB.getCollectionNames();
+printjson(collections);
